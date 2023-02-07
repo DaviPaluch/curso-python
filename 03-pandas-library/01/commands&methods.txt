@@ -1,0 +1,94 @@
+************METHODS****PYTHON******************
+dados.Entidade.mean() ----------> mean significa média {retorna a media da entidade}
+dados.info() ----------> retorna informação sobre as entidades
+dados.sample() ------> retorna aleatóriamente uma linha da tabela
+dados.sample(10) ------> retorna aleatóriamente dez linha da tabela
+dados["Entidade"][0].split() ---------> split é um método separa dados e retorna um aray ex: R$ 700.00 » [R$, 700.00]
+dados["Series ou Entidade"].str.split -------> separa e cria um array de todos os dados da "series" ou "Entidade". Deve ser colocado tbm o tipo de dado...mais usual "str"(string) 
+dados["Valor"].str.split(expand = True) -----cria um array e para toda a "series" e tbm gera uma variável para cada coluna
+dados["Valor"].str.split(expand = True)[1].unique() -----cria um array e para toda a "series", gera uma variável para cada coluna e tbm verifica cada dado único na lista
+dados.describe()   -----> retorna a média. mediana, quartis, min, max,contagem
+dados["Entidade"]].isnull()
+dados[dados["Entidade"]].isnull()] -----> criação de mascara
+dados[dados["Tipos_Anuncio"].isnull()]["Tipo_Anuncio"].unique() -----> Não esqueça de sempre colocar qual entidade vc está de refirindo. O computador é burro.
+
+dados_variavel["Entidade"].str.replace(".","") -------> substitui strings(numeros em python só tem um ponto na casa decimal)
+dados_variavel["Entidade"].str.replace(".","").astype(float) -------> tira pontos da string e converte para "Float" no caso
+dados_variavel["Entidade_Dois"] = dados_variavel["Entidade"].str.replace(".","").astype(float) --------> adicionando uma nova "series" para minha tabela
+
+
+************LEARN****PYTHON******************
+
+dados = (lista de dados)
+
+dados[["Valor","Bairro"]] ------> retorna apenas as partes que eu selecioneiu da tabela
+dados[["Moeda","Valor_Anuncio","Tipo_Anuncio"]] --------> cria novas entidades que podem ser alimentadas (ex: com o método "split()")
+--------------------------
+
+dados.sample() ------> retorna aleatóriamente uma linha da tabela
+
+dados.sample(10) ------> retorna aleatóriamente dez linha da tabela
+
+--------------------------
+
+dados["Entidade"] --------> retorna uma entidade da lista {geralmente usado quando o nome é composto}
+dados.NomedaEntidade --------> outra forma de retornar uma entidade da lista
+
+dados["Bairro"][6522] --------> retorna a entidade com a linha especifica
+
+dados.info() ----------> retorna informação sobre as entidades
+
+--------------------------
+
+dados.Entidade.mean() ----------> mean significa média {retorna a media da entidade}
+dados.[Nome Entidade].mean() ----------> mean significa média {retorna a media da entidade}
+
+-------------------------
+
+dados["Bairro"] == "Vila Mariana" -------> retorna true or false de cada dado{true = 1; false = 0} 
+sum(dados["Bairro"] == "Vila Mariana") -------> retorna a soma de trues
+
+
+
+-------------------------
+
+dados["Entidade"][0].split() ---------> split é um método separa dados e retorna um aray ex: R$ 700.00 » [R$, 700.00]
+dados["Valor"][0].split()
+dados["Series ou Entidade"].str.split() -------> separa e cria um array de todos os dados da "series" ou "Entidade". Deve ser colocado tbm o tipo de dado...mais usual "str"(string) 
+	
+	O retorno do método split pode gerar arrays de tamanhos diferentes. Podemos criar uma coluna para cada uma dessas variáveis que o split() cria.Veja o exeplo abaixo
+
+dados["Valor"].str.split(expand = True) -----cria um array e para toda a "series" e tbm gera uma variável para cada coluna
+	
+	É bem possivel que os dados presentes na tabelas podem ser diferentes...então fazemos o check de quantos dados unicos possuem a coluna
+dados["Valor"].str.split(expand = True)[1].unique() -----cria um array e para toda a "series", gera uma variável para cada coluna e tbm verifica cada dado único na lista
+
+	Posso criar novas entidades para a tabela e alimentar com o dados criados do split
+dados[["Moeda","Valor_Anuncio","Tipo_Anuncio"]] = dados["Valor"].str.split(expand = True)
+
+
+
+------------------------
+
+
+dados["Entidade"]].isnull()
+dados[dados["Entidade"]].isnull()] -----> criação de mascara
+dados[dados["Tipos_Anuncio"].isnull()]["Tipo_Anuncio"].unique() -----> Não esqueça de sempre colocar qual entidade vc está de refirindo. O computador é burro.
+
+dados_variavel["Entidade"].str.replace(".","") -------> substitui strings(numeros em python só tem um ponto na casa decimal)
+dados_variavel["Entidade"].str.replace(".","").astype(float) -------> tira pontos da string e converte para "Float" no caso
+dados_variavel["Entidade_Dois"] = dados_variavel["Entidade"].str.replace(".","").astype(float) --------> adicionando uma nova "series" para minha tabela
+
+------------------------
+
+dados.describe()   -----> retorna a média. mediana, quartis, min, max,contagem
+
+
+
+
+
+
+
+
+
+
